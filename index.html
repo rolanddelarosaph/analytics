@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Roland Dela Rosa — Data Analyst | Data Scientist</title>
-<meta name="description" content="Data Analyst and Data Scientist — Statistics, Bayesian Modeling, Forecasting, Python, SQL, Tableau. Real findings on real Philippine and European data."/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+<meta content="Data Analyst and Data Scientist — Statistics, Bayesian Modeling, Forecasting, Python, SQL, Tableau. Real findings on real Philippine and European data." name="description"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@300;400;500;600&amp;family=Fraunces:ital,wght@0,300;0,500;1,300&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -144,6 +145,9 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 .hero-sub{animation:fadeUp 0.55s ease both 0.12s}
 .hero-actions{animation:fadeUp 0.55s ease both 0.18s}
 .hero-stack{animation:fadeUp 0.55s ease both 0.24s}
+
+.project-card.featured > .project-img-wrap{height:100%;min-height:320px}
+.project-card.featured > .project-img-wrap img{object-fit:contain;padding:1rem;background:var(--bg)}
 @media(max-width:900px){
   .about-grid,.contact-grid{grid-template-columns:1fr}
   .projects-grid{grid-template-columns:1fr}
@@ -164,288 +168,255 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 </style>
 </head>
 <body>
-
 <nav>
-  <div class="nav-inner">
-    <span class="nav-logo">roland.delarosa</span>
-    <ul class="nav-links">
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a class="nav-cta" href="#contact"><i class="fa-solid fa-paper-plane" style="font-size:0.78rem"></i> Get in Touch</a>
-  </div>
-</nav>
-
-<div class="hero" id="top">
-  <div class="hero-tag"><span class="status-dot"></span> Open to opportunities · Philippines</div>
-  <div class="hero-name-row">
-    <span class="hero-label">Data Analyst | Data Scientist</span>
-    <span class="hero-name">ROLAND DELA ROSA</span>
-    <span class="hero-role">I study what the data actually says.</span>
-  </div>
-  <p class="hero-sub">Statistics graduate who works across the full data lifecycle — from connecting and cleaning raw sources, to running the analysis that surfaces what actually matters. My work spans Bayesian multilevel modeling, time series forecasting, exchange rate lag correlation, and business impact analysis, all on real Philippine government and European business data. Three projects. Real findings. Not just charts.</p>
-  <div class="hero-actions">
-    <a class="btn-primary" href="#projects"><i class="fa-solid fa-folder-open"></i> View Projects</a>
-    <a class="btn-outline" href="https://github.com/rolanddelarosaph" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-    <a class="btn-outline" href="https://www.linkedin.com/in/roland-dela-rosa-5595713b9/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-    <a class="btn-outline" href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
-  </div>
-  <div class="hero-stack">
-    <div class="stack-label">Core stack</div>
-    <div class="stack-groups">
-      <div class="stack-group">
-        <div class="stack-row-label">Languages &amp; Core</div>
-        <div class="stack-pills">
-          <span class="pill pill-python"><i class="fa-brands fa-python"></i> Python</span>
-          <span class="pill pill-sql"><i class="fa-solid fa-database"></i> SQL</span>
-          <span class="pill pill-sql" style="background:#F0FDF4;color:#166534;border-color:#86EFAC"><i class="fa-solid fa-r"></i> R</span>
-          <span class="pill pill-stats"><i class="fa-solid fa-chart-simple"></i> Statistics</span>
-        </div>
-      </div>
-      <div class="stack-group">
-        <div class="stack-row-label">Analytics &amp; Modeling</div>
-        <div class="stack-pills">
-          <span class="pill pill-pymc">〜 Bayesian Modeling</span>
-          <span class="pill pill-api" style="background:#FEF9C3;color:#713F12;border-color:#FDE047"><i class="fa-solid fa-chart-line"></i> Forecasting</span>
-          <span class="pill pill-stats"><i class="fa-solid fa-magnifying-glass-chart"></i> Statistical Analysis &amp; Modeling</span>
-          <span class="pill pill-model"><i class="fa-solid fa-chart-line"></i> Predictive Modeling</span>
-        </div>
-      </div>
-      <div class="stack-group">
-        <div class="stack-row-label">Data Analysis &amp; Visualization</div>
-        <div class="stack-pills">
-          <span class="pill pill-tableau"><i class="fa-solid fa-chart-bar"></i> Tableau</span>
-          <span class="pill pill-viz"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
-          <span class="pill pill-data">pandas</span>
-          <span class="pill pill-data">NumPy</span>
-        </div>
-      </div>
-      <div class="stack-group">
-        <div class="stack-row-label">Data &amp; Engineering</div>
-        <div class="stack-pills">
-          <span class="pill pill-snowflake">❄ Snowflake</span>
-          <span class="pill pill-dbt">dbt</span>
-          <span class="pill pill-medallion"><i class="fa-solid fa-code-branch"></i> ETL / ELT</span>
-          <span class="pill pill-mysql"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt=""/> MySQL</span>
-          <span class="pill pill-medallion"><i class="fa-solid fa-layer-group"></i> Medallion Architecture</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="nav-inner">
+<span class="nav-logo">roland.delarosa</span>
+<ul class="nav-links">
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<a class="nav-cta" href="#contact"><i class="fa-solid fa-paper-plane" style="font-size:0.78rem"></i> Get in Touch</a>
 </div>
-
-<div class="divider"><hr></div>
-
+</nav>
+<div class="hero" id="top">
+<div class="hero-tag"><span class="status-dot"></span> Open to opportunities · Philippines</div>
+<div class="hero-name-row">
+<span class="hero-label">Data Analyst | Data Scientist</span>
+<span class="hero-name">ROLAND DELA ROSA</span>
+<span class="hero-role">I study what the data actually says.</span>
+</div>
+<p class="hero-sub">Statistics graduate who works across the full data lifecycle — from connecting and cleaning raw sources, to running the analysis that surfaces what actually matters. My work spans Bayesian multilevel modeling, time series forecasting, exchange rate lag correlation, and business impact analysis, all on real Philippine government and European business data. Three projects. Real findings. Not just charts.</p>
+<div class="hero-actions">
+<a class="btn-primary" href="#projects"><i class="fa-solid fa-folder-open"></i> View Projects</a>
+<a class="btn-outline" href="https://github.com/rolanddelarosaph" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+<a class="btn-outline" href="https://www.linkedin.com/in/roland-dela-rosa-5595713b9/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+<a class="btn-outline" href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</div>
+<div class="hero-stack">
+<div class="stack-label">Core stack</div>
+<div class="stack-groups">
+<div class="stack-group">
+<div class="stack-row-label">Languages &amp; Core</div>
+<div class="stack-pills">
+<span class="pill pill-python"><i class="fa-brands fa-python"></i> Python</span>
+<span class="pill pill-sql"><i class="fa-solid fa-database"></i> SQL</span>
+<span class="pill pill-sql" style="background:#F0FDF4;color:#166534;border-color:#86EFAC"><i class="fa-solid fa-r"></i> R</span>
+<span class="pill pill-stats"><i class="fa-solid fa-chart-simple"></i> Statistics</span>
+</div>
+</div>
+<div class="stack-group">
+<div class="stack-row-label">Analytics &amp; Modeling</div>
+<div class="stack-pills">
+<span class="pill pill-pymc">〜 Bayesian Modeling</span>
+<span class="pill pill-api" style="background:#FEF9C3;color:#713F12;border-color:#FDE047"><i class="fa-solid fa-chart-line"></i> Forecasting</span>
+<span class="pill pill-stats"><i class="fa-solid fa-magnifying-glass-chart"></i> Statistical Analysis &amp; Modeling</span>
+<span class="pill pill-model"><i class="fa-solid fa-chart-line"></i> Predictive Modeling</span>
+</div>
+</div>
+<div class="stack-group">
+<div class="stack-row-label">Data Analysis &amp; Visualization</div>
+<div class="stack-pills">
+<span class="pill pill-tableau"><i class="fa-solid fa-chart-bar"></i> Tableau</span>
+<span class="pill pill-viz"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
+<span class="pill pill-data">pandas</span>
+<span class="pill pill-data">NumPy</span>
+</div>
+</div>
+<div class="stack-group">
+<div class="stack-row-label">Data &amp; Engineering</div>
+<div class="stack-pills">
+<span class="pill pill-snowflake">❄ Snowflake</span>
+<span class="pill pill-dbt">dbt</span>
+<span class="pill pill-medallion"><i class="fa-solid fa-code-branch"></i> ETL / ELT</span>
+<span class="pill pill-mysql"><img alt="" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"/> MySQL</span>
+<span class="pill pill-medallion"><i class="fa-solid fa-layer-group"></i> Medallion Architecture</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="divider"><hr/></div>
 <section id="projects">
-  <div class="section-label">Projects</div>
-  <h2 class="section-title">WHAT I BUILT</h2>
-  <div class="projects-grid">
+<div class="section-label">Projects</div>
+<h2 class="section-title">WHAT I BUILT</h2>
+<div class="projects-grid">
 
-    <div class="project-card featured" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/ph-food-price-pipeline')">
-      <div class="marquee-wrap">
-        <div class="marquee-track" id="marquee-food">
-          <img src="images/architecture food pipeline.png" alt="Pipeline Architecture"/>
-          <img src="images/ph_food_price_dashboard.png" alt="Tableau Dashboard"/>
-          <img src="images/architecture food pipeline.png" alt="Pipeline Architecture"/>
-          <img src="images/ph_food_price_dashboard.png" alt="Tableau Dashboard"/>
-        </div>
-      </div>
-      <div class="project-body">
-        <div class="project-badge">Analytics · Forecasting · Predictive Modeling</div>
-        <h3>PHILIPPINE FOOD PRICE ANALYTICS PIPELINE</h3>
-        <p>Built to answer a question nobody had formally asked: are actual market food prices rising faster than the official CPI, and does a weakening peso predict food price increases before households feel it? Connected three government data sources — WFP market prices, PSA Consumer Price Index, and live BSP exchange rates — that had never been combined before. The analysis found peso depreciation leads food price increases by 1–2 months (r=0.29, p=0.018) and that NCR food prices run 60+ index points above the official CPI — a gap invisible in national statistics. Powered by a cloud pipeline on Snowflake, dbt, and Airflow with a live Tableau dashboard.</p>
-        <div class="project-tools">
-          <span class="tool-tag">Time Series Forecasting</span><span class="tool-tag">Predictive Modeling</span>
-          <span class="tool-tag">Lag Analysis</span><span class="tool-tag">Statistical Analysis</span>
-          <span class="tool-tag">Prophet</span><span class="tool-tag">Tableau</span><span class="tool-tag">Python</span>
-          <span class="tool-tag">Snowflake</span><span class="tool-tag">dbt</span><span class="tool-tag">Apache Airflow</span>
-          <span class="tool-tag">BSP Live API</span>
-        </div>
-        <div class="project-links">
-          <a class="proj-link" href="https://github.com/rolanddelarosaph/ph-food-price-pipeline" target="_blank" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i> GitHub</a>
-          <a class="proj-link" href="https://public.tableau.com/app/profile/roland.dela.rosa/viz/PHFoodPriceDashboard/DASHBOARD" target="_blank" onclick="event.stopPropagation()"><i class="fa-solid fa-chart-line"></i> Live Dashboard</a>
-          <button class="expand-btn" onclick="event.stopPropagation();toggleExpand('expand-food',this)"><i class="fa-solid fa-chevron-down"></i> Details</button>
-        </div>
-      </div>
-      <div class="expand-panel full-width" id="expand-food">
-        <dl class="detail-list">
-          <div class="detail-block"><dt>Pipeline design</dt><dd>Three ingestion scripts load from different source formats into Snowflake Bronze as-is — WFP CSV (121,512 rows), PSA CPI multi-sheet Excel (179,289 rows), and a live BSP API call that appends one new exchange rate row per monthly run rather than overwriting. dbt handles all transformations: Silver models standardize column types, deduplicate via ROW_NUMBER(), and unpivot the PSA CPI from wide to long format. Gold builds a star schema — dim_region, dim_commodity, dim_date, dim_market + fact_food_prices — with surrogate keys and a price-to-CPI ratio column as the core analytical metric. The 4-task Airflow DAG (ingest → silver → gold → dbt test) runs on the 1st of every month; if any dbt test fails, the pipeline halts before bad data reaches Gold.</dd></div>
-          <div class="detail-block"><dt>Data quality</dt><dd>20 dbt tests cover not_null, unique, accepted_values, and referential integrity across all Silver and Gold models. Tests run as the final DAG task — PASS=20, WARN=0, ERROR=0. The Bronze layer is never overwritten, preserving a full raw audit trail for every monthly run.</dd></div>
-          <div class="detail-block"><dt>Key findings</dt><dd>BSP lag correlation analysis: peso depreciation leads food price increases by 1–2 months (r=0.29, p=0.018). Prophet forecasting with and without BSP as regressor diverges during depreciation periods — confirming exchange rate adds genuine forecast signal. Key findings: NCR food prices run 60+ index points above PSA CPI. Meat, fish, and eggs surged 80.6% from 2018–2023. Luzon is 19.7% more expensive than Mindanao for the same WFP basket.</dd></div>
-        </dl>
-      </div>
-    </div>
 
-    <div class="project-card" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/datawarehouse-european-ecommerce')">
-      <div class="project-img-wrap">
-        <img src="images/architecture datawarehouse.png" alt="European Fashion Retail Data Warehouse Architecture"/>
-      </div>
-      <div class="project-body">
-        <div class="project-badge">Business Analytics · SQL · Data Warehouse</div>
-        <h3>EUROPEAN FASHION RETAIL DATA WAREHOUSE &amp; ANALYTICS</h3>
-        <p>Built a complete analytics layer on seven European fashion retail datasets covering revenue trends, channel performance, campaign attribution, product ranking by country, and stockout risk for high-velocity SKUs. The analysis found that 92.7% of revenue comes from full-price orders and that 55% of product-country inventory positions are at critical stock levels — the kind of signal that directly informs purchasing and markdown decisions. Powered by a MySQL star schema with stored procedures, transaction control, and 27 SQL data quality tests.</p>
-        <div class="project-tools">
-          <span class="tool-tag">MySQL 8.0</span><span class="tool-tag">Python</span>
-          <span class="tool-tag">Stored Procedures</span><span class="tool-tag">Star Schema</span>
-          <span class="tool-tag">Window Functions</span><span class="tool-tag">CTEs</span>
-          <span class="tool-tag">RANK() · LAG()</span>
-        </div>
-        <div class="project-links">
-          <a class="proj-link" href="https://github.com/rolanddelarosaph/datawarehouse-european-ecommerce" target="_blank" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i> GitHub</a>
-          <button class="expand-btn" onclick="event.stopPropagation();toggleExpand('expand-fashion',this)"><i class="fa-solid fa-chevron-down"></i> Details</button>
-        </div>
-      </div>
-      <div class="expand-panel" id="expand-fashion">
-        <dl class="detail-list">
-          <div class="detail-block"><dt>Pipeline design</dt><dd>Bronze: 7 tables loaded via LOAD DATA LOCAL INFILE (fastest MySQL bulk-load method), truncated and reloaded on each run for idempotency. Silver: a stored procedure (transform_silver_layer()) applies type casting for all IDs, dates, and decimals; strips percentage characters; trims whitespace; and removes duplicates via ROW_NUMBER() — all in one transactional call. Gold: star schema with dim_customer, dim_product, dim_campaign + fact_sales (2,253 rows), surrogate keys, foreign keys, and indexed on sale_date and customer_id. Campaign attribution joins on channel + date range so each line item is automatically attributed to the active campaign — no manual tagging. Full pipeline wraps every stage in a single MySQL transaction — any failure triggers a complete rollback.</dd></div>
-          <div class="detail-block"><dt>Data quality &amp; execution</dt><dd>SQL-based quality tests: row count checks per layer, null checks on all primary keys, referential integrity validation, duplicate checks on dimension keys, and discount logic validation. Pipeline logs every stage to pipeline.log with timestamps — exits code 1 on failure, code 0 on success.</dd></div>
-          <div class="detail-block"><dt>Business findings</dt><dd>€324,236 revenue · 905 orders · €358 AOV. Only 9.8% of orders were discounted (avg 24.3% off) — 92.7% of revenue is full-price, meaning healthy margin discipline. 55% of product-country inventory positions at critical stock levels, with the stockout risk query identifying which high-velocity SKUs are also most exposed — the highest-replenishment-priority items.</dd></div>
-        </dl>
-      </div>
-    </div>
 
-    <div class="project-card" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/psa-lfs-educational-mobility-pipeline')">
-      <div class="project-img-wrap">
-        <img src="images/architecture lfs.png" alt="PSA LFS Educational Mobility Pipeline Architecture"/>
-      </div>
-      <div class="project-body">
-        <div class="thesis-badge">🎓 UNDERGRADUATE THESIS</div>
-        <h3>BAYESIAN MULTILEVEL MODELING OF INTERGENERATIONAL EDUCATIONAL MOBILITY — PSA LFS PIPELINE</h3>
-        <p>Undergraduate thesis research question: does a parent's education predict their child's outcomes, and does that relationship hold the same way across every Philippine region? Processed 11.28 million rows of PSA Labor Force Survey microdata across 14 years, then fitted a Bayesian multilevel model allowing the effect to vary by region. Found a nationally uniform father-son educational persistence slope of 0.265 — consistent across all 17 regions. The finding reframes the inequality problem as structural and national, not regional or isolated. The pipeline underneath processed 48 quarterly files with schema inconsistencies and a mid-dataset K-12 reform that changed what education codes mean.</p>
-        <div class="project-tools">
-          <span class="tool-tag">Bayesian Multilevel Modeling</span><span class="tool-tag">PyMC</span>
-          <span class="tool-tag">Bambi</span><span class="tool-tag">Python</span><span class="tool-tag">ArviZ</span>
-          <span class="tool-tag">pandas</span><span class="tool-tag">Intergenerational Mobility</span>
-          <span class="tool-tag">PSA LFS Microdata</span><span class="tool-tag">ETL Pipeline</span>
-        </div>
-        <div class="project-links">
-          <a class="proj-link" href="https://github.com/rolanddelarosaph/psa-lfs-educational-mobility-pipeline" target="_blank" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i> GitHub</a>
-          <button class="expand-btn" onclick="event.stopPropagation();toggleExpand('expand-lfs',this)"><i class="fa-solid fa-chevron-down"></i> Details</button>
-        </div>
-      </div>
-      <div class="expand-panel" id="expand-lfs">
-        <dl class="detail-list">
-          <div class="detail-block"><dt>ETL pipeline</dt><dd>PSA used three different column schemas across survey years, and the K-12 reform created two incompatible grade code systems mid-2016 — the same numeric code means a different education level depending on the quarter. A schema config registry routes each file to the correct column names and grade map automatically. A 12-step cleaning pipeline then pairs parents and children within households, applies age gap filters to remove implausible pairs, and logs every run. python main.py processes all 48 files end-to-end.</dd></div>
-          <div class="detail-block"><dt>Bayesian model</dt><dd>Multilevel Linear Model via Bambi/PyMC: 4 chains × 2,000 draws, all R-hat &lt; 1.01. Predictors: father's and mother's schooling years (with quadratic terms), children per household, child age, and survey year fixed effects. Region-level random intercepts and random slopes allow the father-education effect to vary by region. Prior sensitivity confirmed across 3 specifications.</dd></div>
-          <div class="detail-block"><dt>Key findings</dt><dd>For every additional year of a father's education, a son completes 0.265 more years of schooling on average — a substantial national-level persistence. Regional slopes range 0.244–0.280 but all credible intervals overlap, meaning this is a structural national problem, not isolated to any one region. Mother's education has a stronger and more regionally variable effect (0.249 in NCR to 0.385 in Davao). BARMM has the lowest average son schooling nationally at 8.86 years.</dd></div>
-        </dl>
-      </div>
-    </div>
+<div class="project-card featured" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/psa-lfs-educational-mobility-pipeline')">
+<div class="project-img-wrap">
+<img alt="PSA LFS Educational Mobility Pipeline Architecture" src="images/architecture lfs.png"/>
+</div>
+<div class="project-body">
+<div class="thesis-badge">🎓 UNDERGRADUATE THESIS · BAYESIAN MODELING</div>
+<h3>BAYESIAN MULTILEVEL MODELING OF INTERGENERATIONAL EDUCATIONAL MOBILITY</h3>
+<p>Undergraduate thesis applying Bayesian multilevel modeling to intergenerational educational mobility across all 17 Philippine regions. Using 11.28 million rows of PSA Labor Force Survey microdata spanning 2010–2024, I fitted a hierarchical model with region-level random intercepts and slopes to estimate how parental education predicts children's schooling outcomes. The analysis found a nationally consistent father-son educational persistence slope of 0.265, suggesting the pattern is structural rather than isolated to particular regions. A Python ETL pipeline supports the analysis by harmonizing 48 quarterly survey files across changing PSA schemas and K–12 education coding systems.</p>
+<div class="project-tools"><span class="tool-tag">Bayesian Multilevel Modeling</span><span class="tool-tag">PyMC</span><span class="tool-tag">Bambi</span><span class="tool-tag">ArviZ</span><span class="tool-tag">Python</span><span class="tool-tag">Statistical Modeling</span><span class="tool-tag">PSA LFS Microdata</span><span class="tool-tag">11.28M rows</span><span class="tool-tag">ETL Pipeline</span></div>
+<div class="project-links">
+<a class="proj-link" href="https://github.com/rolanddelarosaph/psa-lfs-educational-mobility-pipeline" onclick="event.stopPropagation()" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+<button class="expand-btn" onclick="event.stopPropagation();toggleExpand('expand-lfs',this)"><i class="fa-solid fa-chevron-down"></i> Details</button>
+</div>
+</div>
+<div class="expand-panel" id="expand-lfs">
+<dl class="detail-list">
 
-  </div>
+
+
+<div class="detail-block"><dt>Bayesian model</dt><dd>Multilevel Linear Model via Bambi/PyMC: 4 chains × 2,000 draws, all R-hat &lt; 1.01. Predictors: father's and mother's schooling years (with quadratic terms), children per household, child age, and survey year fixed effects. Region-level random intercepts and random slopes allow the father-education effect to vary by region. Prior sensitivity confirmed across 3 specifications.</dd></div><div class="detail-block"><dt>Key findings</dt><dd>For every additional year of a father's education, a son completes 0.265 more years of schooling on average — a substantial national-level persistence. Regional slopes range 0.244–0.280 but all credible intervals overlap, meaning this is a structural national problem, not isolated to any one region. Mother's education has a stronger and more regionally variable effect (0.249 in NCR to 0.385 in Davao). BARMM has the lowest average son schooling nationally at 8.86 years.</dd></div><div class="detail-block"><dt>ETL pipeline</dt><dd>PSA used three different column schemas across survey years, and the K-12 reform created two incompatible grade code systems mid-2016 — the same numeric code means a different education level depending on the quarter. A schema config registry routes each file to the correct column names and grade map automatically. A 12-step cleaning pipeline then pairs parents and children within households, applies age gap filters to remove implausible pairs, and logs every run. python main.py processes all 48 files end-to-end.</dd></div></dl>
+</div>
+</div><div class="project-card" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/ph-food-price-pipeline')">
+<div class="project-img-wrap"><img alt="Philippine Food Price Analytics Tableau Dashboard" src="images/ph_food_price_dashboard.png"/></div>
+<div class="project-body">
+<div class="project-badge">Forecasting · Analytics · Data Pipeline</div>
+<h3>PHILIPPINE FOOD PRICE ANALYTICS PIPELINE</h3>
+<p>Forecasting and analytics project examining whether market food prices rise faster than the official CPI and whether peso depreciation provides an early signal of food-price increases. I combined WFP market prices, PSA Consumer Price Index data, and live BSP exchange rates, then performed lag-correlation analysis and Prophet time-series forecasting with exchange rate as an external regressor. The analysis found peso depreciation leads food-price increases by 1–2 months (r=0.29, p=0.018), while NCR market prices run 60+ index points above the official CPI. The analysis is supported by a Snowflake, dbt, and Airflow pipeline and a Tableau dashboard.</p>
+<div class="project-tools">
+<span class="tool-tag">Time Series Forecasting</span><span class="tool-tag">Predictive Modeling</span>
+<span class="tool-tag">Lag Analysis</span><span class="tool-tag">Statistical Analysis</span>
+<span class="tool-tag">Prophet</span><span class="tool-tag">Tableau</span><span class="tool-tag">Python</span>
+<span class="tool-tag">Snowflake</span><span class="tool-tag">dbt</span><span class="tool-tag">Apache Airflow</span>
+<span class="tool-tag">BSP Live API</span>
+</div>
+<div class="project-links">
+<a class="proj-link" href="https://github.com/rolanddelarosaph/ph-food-price-pipeline" onclick="event.stopPropagation()" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+<a class="proj-link" href="https://public.tableau.com/app/profile/roland.dela.rosa/viz/PHFoodPriceDashboard/DASHBOARD" onclick="event.stopPropagation()" target="_blank"><i class="fa-solid fa-chart-line"></i> Live Dashboard</a>
+<button class="expand-btn" onclick="event.stopPropagation();toggleExpand('expand-food',this)"><i class="fa-solid fa-chevron-down"></i> Details</button>
+</div>
+</div>
+<div class="expand-panel full-width" id="expand-food">
+<dl class="detail-list">
+<div class="detail-block"><dt>Pipeline design</dt><dd>Three ingestion scripts load from different source formats into Snowflake Bronze as-is — WFP CSV (121,512 rows), PSA CPI multi-sheet Excel (179,289 rows), and a live BSP API call that appends one new exchange rate row per monthly run rather than overwriting. dbt handles all transformations: Silver models standardize column types, deduplicate via ROW_NUMBER(), and unpivot the PSA CPI from wide to long format. Gold builds a star schema — dim_region, dim_commodity, dim_date, dim_market + fact_food_prices — with surrogate keys and a price-to-CPI ratio column as the core analytical metric. The 4-task Airflow DAG (ingest → silver → gold → dbt test) runs on the 1st of every month; if any dbt test fails, the pipeline halts before bad data reaches Gold.</dd></div>
+<div class="detail-block"><dt>Data quality</dt><dd>20 dbt tests cover not_null, unique, accepted_values, and referential integrity across all Silver and Gold models. Tests run as the final DAG task — PASS=20, WARN=0, ERROR=0. The Bronze layer is never overwritten, preserving a full raw audit trail for every monthly run.</dd></div>
+<div class="detail-block"><dt>Key findings</dt><dd>BSP lag correlation analysis: peso depreciation leads food price increases by 1–2 months (r=0.29, p=0.018). Prophet forecasting with and without BSP as regressor diverges during depreciation periods — confirming exchange rate adds genuine forecast signal. Key findings: NCR food prices run 60+ index points above PSA CPI. Meat, fish, and eggs surged 80.6% from 2018–2023. Luzon is 19.7% more expensive than Mindanao for the same WFP basket.</dd></div>
+</dl>
+</div>
+</div><div class="project-card" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/datawarehouse-european-ecommerce')">
+<div class="project-img-wrap">
+<img alt="European Fashion Retail Data Warehouse Architecture" src="images/architecture datawarehouse.png"/>
+</div>
+<div class="project-body">
+<div class="project-badge">Business Analytics · SQL · Retail Analytics</div>
+<h3>EUROPEAN FASHION RETAIL DATA ANALYTICS</h3>
+<p>Analyzed seven European fashion retail datasets to uncover revenue trends, channel performance, campaign attribution, product rankings by country, and stockout risk for high-velocity SKUs. The analysis found that 92.7% of revenue comes from full-price orders and that 55% of product-country inventory positions are at critical stock levels — signals directly relevant to purchasing, replenishment, and markdown decisions. SQL analytics use CTEs, window functions, RANK(), and LAG(), with the underlying data organized in a MySQL star-schema warehouse for reliable analysis.</p>
+<div class="project-tools"><span class="tool-tag">Business Analytics</span><span class="tool-tag">SQL</span><span class="tool-tag">Window Functions</span><span class="tool-tag">CTEs</span><span class="tool-tag">RANK() · LAG()</span><span class="tool-tag">MySQL 8.0</span><span class="tool-tag">Python</span><span class="tool-tag">Star Schema</span></div>
+<div class="project-links">
+<a class="proj-link" href="https://github.com/rolanddelarosaph/datawarehouse-european-ecommerce" onclick="event.stopPropagation()" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+<button class="expand-btn" onclick="event.stopPropagation();toggleExpand('expand-fashion',this)"><i class="fa-solid fa-chevron-down"></i> Details</button>
+</div>
+</div>
+<div class="expand-panel" id="expand-fashion">
+<dl class="detail-list">
+<div class="detail-block"><dt>Pipeline design</dt><dd>Bronze: 7 tables loaded via LOAD DATA LOCAL INFILE (fastest MySQL bulk-load method), truncated and reloaded on each run for idempotency. Silver: a stored procedure (transform_silver_layer()) applies type casting for all IDs, dates, and decimals; strips percentage characters; trims whitespace; and removes duplicates via ROW_NUMBER() — all in one transactional call. Gold: star schema with dim_customer, dim_product, dim_campaign + fact_sales (2,253 rows), surrogate keys, foreign keys, and indexed on sale_date and customer_id. Campaign attribution joins on channel + date range so each line item is automatically attributed to the active campaign — no manual tagging. Full pipeline wraps every stage in a single MySQL transaction — any failure triggers a complete rollback.</dd></div>
+<div class="detail-block"><dt>Data quality &amp; execution</dt><dd>SQL-based quality tests: row count checks per layer, null checks on all primary keys, referential integrity validation, duplicate checks on dimension keys, and discount logic validation. Pipeline logs every stage to pipeline.log with timestamps — exits code 1 on failure, code 0 on success.</dd></div>
+<div class="detail-block"><dt>Business findings</dt><dd>€324,236 revenue · 905 orders · €358 AOV. Only 9.8% of orders were discounted (avg 24.3% off) — 92.7% of revenue is full-price, meaning healthy margin discipline. 55% of product-country inventory positions at critical stock levels, with the stockout risk query identifying which high-velocity SKUs are also most exposed — the highest-replenishment-priority items.</dd></div>
+</dl>
+</div>
+</div></div>
 </section>
-
-<div class="divider"><hr></div>
-
+<div class="divider"><hr/></div>
 <section id="experience">
-  <div class="section-label">Experience</div>
-  <h2 class="section-title">WORK HISTORY</h2>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-date">Nov 2024 – Present</div>
-      <div class="tl-role">SENIOR PROCESS EXECUTIVE</div>
-      <div class="tl-company">Cognizant Technology Solutions · Taguig, Metro Manila</div>
-      <div class="tl-desc">Use query languages to extract and explore operational data from large-scale reporting systems, supporting root cause analysis and performance investigations. Analyze SLA metrics, resolution trends, and workgroup quality data to surface data-driven insights. One of the senior PEs responsible for data-backed issue resolution and stakeholder reporting across global operations.</div>
-      <div class="tl-tags"><span class="tl-tag">Query Languages</span><span class="tl-tag">Root Cause Analysis</span><span class="tl-tag">Performance Reporting</span><span class="tl-tag">SLA Analysis</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">2023 – 2026 · Freelance</div>
-      <div class="tl-role">STATISTICAL CONSULTANT — DATA ANALYSIS &amp; THESIS ADVISORY</div>
-      <div class="tl-company">Independent · Metro Manila</div>
-      <div class="tl-desc">Assisted undergraduate and graduate students with end-to-end statistical analysis — from data cleaning and exploratory analysis through model selection, fitting, and interpretation of results. Work spans regression modeling, Bayesian analysis, and survey data analysis on real datasets from education, health, and social sciences.</div>
-      <div class="tl-tags"><span class="tl-tag">Statistical Modelling</span><span class="tl-tag">Bayesian Analysis</span><span class="tl-tag">Python</span><span class="tl-tag">Research Design</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Sep 2022 – Jun 2024</div>
-      <div class="tl-role">CUSTOMER SERVICE ASSOCIATE · BUSINESS ANALYST INTERN</div>
-      <div class="tl-company">Amazon · Pasay, Metro Manila</div>
-      <div class="tl-desc">Built an automated Excel performance tracking dashboard adopted department-wide for monitoring agent KPIs, SLA adherence, and team metrics in real time — replacing manual reporting across multiple teams. Performed ongoing business analysis on team performance data. Recognized as Consistent Top Performer for 2022 and 2023.</div>
-      <div class="tl-tags"><span class="tl-tag">Excel Dashboards</span><span class="tl-tag">Business Analysis</span><span class="tl-tag">KPI Tracking</span><span class="tl-tag">Process Automation</span></div>
-    </div>
-  </div>
+<div class="section-label">Experience</div>
+<h2 class="section-title">WORK HISTORY</h2>
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-date">Nov 2024 – Present</div>
+<div class="tl-role">SENIOR PROCESS EXECUTIVE</div>
+<div class="tl-company">Cognizant Technology Solutions · Taguig, Metro Manila</div>
+<div class="tl-desc">Use query languages to extract and explore operational data from large-scale reporting systems, supporting root cause analysis and performance investigations. Analyze SLA metrics, resolution trends, and workgroup quality data to surface data-driven insights. One of the senior PEs responsible for data-backed issue resolution and stakeholder reporting across global operations.</div>
+<div class="tl-tags"><span class="tl-tag">Query Languages</span><span class="tl-tag">Root Cause Analysis</span><span class="tl-tag">Performance Reporting</span><span class="tl-tag">SLA Analysis</span></div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2023 – 2026 · Freelance</div>
+<div class="tl-role">STATISTICAL CONSULTANT — DATA ANALYSIS &amp; THESIS ADVISORY</div>
+<div class="tl-company">Independent · Metro Manila</div>
+<div class="tl-desc">Assisted undergraduate and graduate students with end-to-end statistical analysis — from data cleaning and exploratory analysis through model selection, fitting, and interpretation of results. Work spans regression modeling, Bayesian analysis, and survey data analysis on real datasets from education, health, and social sciences.</div>
+<div class="tl-tags"><span class="tl-tag">Statistical Modelling</span><span class="tl-tag">Bayesian Analysis</span><span class="tl-tag">Python</span><span class="tl-tag">Research Design</span></div>
+</div>
+<div class="tl-item">
+<div class="tl-date">Sep 2022 – Jun 2024</div>
+<div class="tl-role">CUSTOMER SERVICE ASSOCIATE · BUSINESS ANALYST INTERN</div>
+<div class="tl-company">Amazon · Pasay, Metro Manila</div>
+<div class="tl-desc">Built an automated Excel performance tracking dashboard adopted department-wide for monitoring agent KPIs, SLA adherence, and team metrics in real time — replacing manual reporting across multiple teams. Performed ongoing business analysis on team performance data. Recognized as Consistent Top Performer for 2022 and 2023.</div>
+<div class="tl-tags"><span class="tl-tag">Excel Dashboards</span><span class="tl-tag">Business Analysis</span><span class="tl-tag">KPI Tracking</span><span class="tl-tag">Process Automation</span></div>
+</div>
+</div>
 </section>
-
-<div class="divider"><hr></div>
-
+<div class="divider"><hr/></div>
 <section id="about">
-  <div class="section-label">About</div>
-  <h2 class="section-title">A BIT ABOUT ME</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>I grew up paying attention to things most people scroll past — price tags, regional news, the gap between what official reports say and what people around me were actually experiencing. Studying Statistics gave that habit a framework.</p>
-      <p>I do not think of myself primarily as someone who works with tools. I think of myself as someone who works with questions. The tools are just how you get there honestly.</p>
-      <p>I am at the beginning of my career, which means I still find most problems interesting. I would like to keep it that way.</p>
-    </div>
-    <div class="about-meta">
-      <div class="meta-card">
-        <div class="label">Education</div>
-        <div class="value">BS STATISTICS<br><span style="color:var(--ink3);font-size:0.85rem">DOST SCHOLAR · MAGNA CUM LAUDE<br>Rizal Technological University · 2026</span></div>
-      </div>
-      <div class="meta-card">
-        <div class="label">Contact</div>
-        <div class="value"><a href="mailto:roland.delarosa.ph@gmail.com">roland.delarosa.ph@gmail.com</a><br><span style="color:var(--ink3);font-size:0.85rem">+63 927 326 3487</span></div>
-      </div>
-      <div class="meta-card">
-        <div class="label">Status</div>
-        <div class="value"><span class="status-dot"></span>&nbsp; Available for Data Analyst / Data Scientist roles</div>
-      </div>
-    </div>
-  </div>
+<div class="section-label">About</div>
+<h2 class="section-title">A BIT ABOUT ME</h2>
+<div class="about-grid">
+<div class="about-text">
+<p>I grew up paying attention to things most people scroll past — price tags, regional news, the gap between what official reports say and what people around me were actually experiencing. Studying Statistics gave that habit a framework.</p>
+<p>I do not think of myself primarily as someone who works with tools. I think of myself as someone who works with questions. The tools are just how you get there honestly.</p>
+<p>I am at the beginning of my career, which means I still find most problems interesting. I would like to keep it that way.</p>
+</div>
+<div class="about-meta">
+<div class="meta-card">
+<div class="label">Education</div>
+<div class="value">BS STATISTICS<br/><span style="color:var(--ink3);font-size:0.85rem">DOST SCHOLAR · MAGNA CUM LAUDE<br/>Rizal Technological University · 2026</span></div>
+</div>
+<div class="meta-card">
+<div class="label">Contact</div>
+<div class="value"><a href="mailto:roland.delarosa.ph@gmail.com">roland.delarosa.ph@gmail.com</a><br/><span style="color:var(--ink3);font-size:0.85rem">+63 927 326 3487</span></div>
+</div>
+<div class="meta-card">
+<div class="label">Status</div>
+<div class="value"><span class="status-dot"></span>  Available for Data Analyst / Data Scientist roles</div>
+</div>
+</div>
+</div>
 </section>
-
-<div class="divider"><hr></div>
-
+<div class="divider"><hr/></div>
 <section id="contact">
-  <div class="section-label">Contact</div>
-  <h2 class="section-title">GET IN TOUCH</h2>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <p>Looking for Data Analyst or Data Scientist roles where I can work on statistical analysis, forecasting, predictive modeling, business analytics, and data-driven decision making. I also bring hands-on experience building ETL/ELT pipelines and analytical data models, so I am comfortable working from raw data through analysis and insight delivery. If that sounds useful to your team, send me a message.</p>
-      <ul class="contact-list">
-        <li><a href="mailto:roland.delarosa.ph@gmail.com"><i class="fa-solid fa-envelope"></i> roland.delarosa.ph@gmail.com</a></li>
-        <li><a href="https://github.com/rolanddelarosaph" target="_blank"><i class="fa-brands fa-github"></i> github.com/rolanddelarosaph</a></li>
-        <li><a href="https://www.linkedin.com/in/roland-dela-rosa-5595713b9/" target="_blank"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/roland-dela-rosa-5595713b9</a></li>
-        <li><a href="https://public.tableau.com/app/profile/roland.dela.rosa" target="_blank"><i class="fa-solid fa-chart-bar"></i> Tableau Public</a></li>
-        <li><a href="tel:+639273263487"><i class="fa-solid fa-phone"></i> +63 927 326 3487</a></li>
-      </ul>
-    </div>
-    <div class="contact-form">
-      <form id="fs-form">
-        <div class="form-group">
-          <label for="cf-name">Name</label>
-          <input type="text" id="cf-name" name="name" placeholder="Your name" required/>
-        </div>
-        <div class="form-group">
-          <label for="cf-email">Email</label>
-          <input type="email" id="cf-email" name="email" placeholder="your@email.com" required/>
-        </div>
-        <div class="form-group">
-          <label for="cf-msg">Message</label>
-          <textarea id="cf-msg" name="message" placeholder="What's on your mind?" required></textarea>
-        </div>
-        <button type="submit" class="btn-primary" id="fs-btn" style="width:100%;justify-content:center">
-          <i class="fa-solid fa-paper-plane"></i> Send message
+<div class="section-label">Contact</div>
+<h2 class="section-title">GET IN TOUCH</h2>
+<div class="contact-grid">
+<div class="contact-info">
+<p>Looking for Data Analyst or Data Scientist roles where I can work on statistical analysis, forecasting, predictive modeling, business analytics, and data-driven decision making. I also bring hands-on experience building ETL/ELT pipelines and analytical data models, so I am comfortable working from raw data through analysis and insight delivery. If that sounds useful to your team, send me a message.</p>
+<ul class="contact-list">
+<li><a href="mailto:roland.delarosa.ph@gmail.com"><i class="fa-solid fa-envelope"></i> roland.delarosa.ph@gmail.com</a></li>
+<li><a href="https://github.com/rolanddelarosaph" target="_blank"><i class="fa-brands fa-github"></i> github.com/rolanddelarosaph</a></li>
+<li><a href="https://www.linkedin.com/in/roland-dela-rosa-5595713b9/" target="_blank"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/roland-dela-rosa-5595713b9</a></li>
+<li><a href="https://public.tableau.com/app/profile/roland.dela.rosa" target="_blank"><i class="fa-solid fa-chart-bar"></i> Tableau Public</a></li>
+<li><a href="tel:+639273263487"><i class="fa-solid fa-phone"></i> +63 927 326 3487</a></li>
+</ul>
+</div>
+<div class="contact-form">
+<form id="fs-form">
+<div class="form-group">
+<label for="cf-name">Name</label>
+<input id="cf-name" name="name" placeholder="Your name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="cf-email">Email</label>
+<input id="cf-email" name="email" placeholder="your@email.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="cf-msg">Message</label>
+<textarea id="cf-msg" name="message" placeholder="What's on your mind?" required=""></textarea>
+</div>
+<button class="btn-primary" id="fs-btn" style="width:100%;justify-content:center" type="submit">
+<i class="fa-solid fa-paper-plane"></i> Send message
         </button>
-        <div class="form-status" id="fs-status"></div>
-      </form>
-    </div>
-  </div>
+<div class="form-status" id="fs-status"></div>
+</form>
+</div>
+</div>
 </section>
-
 <footer>
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="https://github.com/rolanddelarosaph" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-      <a href="https://www.linkedin.com/in/roland-dela-rosa-5595713b9/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-      <a href="https://public.tableau.com/app/profile/roland.dela.rosa" target="_blank"><i class="fa-solid fa-chart-bar"></i> Tableau</a>
-      <a href="mailto:roland.delarosa.ph@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-    </div>
-    <div class="footer-copy">ROLAND DELA ROSA · Data Analyst · Data Scientist · Philippines</div>
-  </div>
+<div class="footer-inner">
+<div class="footer-links">
+<a href="https://github.com/rolanddelarosaph" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+<a href="https://www.linkedin.com/in/roland-dela-rosa-5595713b9/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+<a href="https://public.tableau.com/app/profile/roland.dela.rosa" target="_blank"><i class="fa-solid fa-chart-bar"></i> Tableau</a>
+<a href="mailto:roland.delarosa.ph@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+</div>
+<div class="footer-copy">ROLAND DELA ROSA · Data Analyst · Data Scientist · Philippines</div>
+</div>
 </footer>
-
 <script>
 // ── CARD CLICK → GITHUB ────────────────────────────────────────────────
 function handleCardClick(e, url) {
