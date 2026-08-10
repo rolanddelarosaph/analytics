@@ -40,7 +40,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(247,245,240,0.92);backdrop
 .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
 .hero-stack{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
 .stack-label{font-family:var(--font-mono);font-size:0.72rem;color:var(--ink3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem}
-.stack-pills{display:flex;flex-wrap:wrap;gap:0.45rem;max-width:680px}
+.stack-groups{display:flex;flex-direction:column;gap:0.8rem;max-width:900px}
+.stack-group{display:grid;grid-template-columns:165px 1fr;gap:0.8rem;align-items:start}
+.stack-row-label{font-family:var(--font-mono);font-size:0.68rem;color:var(--ink3);letter-spacing:0.08em;text-transform:uppercase;padding-top:0.35rem}
+.stack-pills{display:flex;flex-wrap:wrap;gap:0.45rem}
 .pill{font-family:var(--font-mono);font-size:0.74rem;padding:0.3rem 0.75rem;border-radius:5px;letter-spacing:0.03em;font-weight:500;display:inline-flex;align-items:center;gap:0.35rem;border:1.5px solid;white-space:nowrap}
 .pill img{width:13px;height:13px;object-fit:contain}
 .pill-python{background:#EEF6FF;color:#1e56b0;border-color:#93c5fd}
@@ -53,6 +56,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(247,245,240,0.92);backdrop
 .pill-api{background:#F5F3FF;color:#6d28d9;border-color:#c4b5fd}
 .pill-pymc{background:#FDF4FF;color:#7e22ce;border-color:#e879f9}
 .pill-tableau{background:#FFF7ED;color:#b45309;border-color:#f59e0b}
+.pill-stats{background:#F3F4F6;color:#374151;border-color:#D1D5DB}
+.pill-ml{background:#ECFDF5;color:#047857;border-color:#6EE7B7}
+.pill-viz{background:#EFF6FF;color:#1D4ED8;border-color:#93C5FD}
+.pill-data{background:#FAF5FF;color:#7E22CE;border-color:#D8B4FE}
 section{max-width:1100px;margin:0 auto;padding:4rem 2rem}
 .section-label{font-family:var(--font-mono);font-size:0.75rem;color:var(--accent2);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.6rem}
 .section-label::before{content:'';width:24px;height:1px;background:var(--accent2)}
@@ -148,6 +155,8 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 }
 @media(max-width:580px){
   .hero{padding:3rem 1.2rem 2.5rem}
+  .stack-group{grid-template-columns:1fr;gap:0.35rem}
+  .stack-row-label{padding-top:0}
   section{padding:3rem 1.2rem}
   .divider{padding:0 1.2rem}
   .hero-actions{flex-direction:column;align-items:flex-start}
@@ -185,17 +194,44 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
   </div>
   <div class="hero-stack">
     <div class="stack-label">Core stack</div>
-    <div class="stack-pills">
-      <span class="pill pill-python"><i class="fa-brands fa-python"></i> Python</span>
-      <span class="pill pill-sql"><i class="fa-solid fa-database"></i> SQL</span>
-      <span class="pill pill-sql" style="background:#F0FDF4;color:#166534;border-color:#86EFAC"><i class="fa-solid fa-r"></i> R</span>
-      <span class="pill pill-pymc">〜 Bayesian Modeling</span>
-      <span class="pill pill-tableau"><i class="fa-solid fa-chart-bar"></i> Tableau</span>
-      <span class="pill pill-api" style="background:#FEF9C3;color:#713F12;border-color:#FDE047"><i class="fa-solid fa-chart-line"></i> Forecasting</span>
-      <span class="pill pill-api" style="background:#EDE9FE;color:#5B21B6;border-color:#C4B5FD"><i class="fa-solid fa-magnifying-glass-chart"></i> Statistical Analysis</span>
-      <span class="pill pill-snowflake">❄ Snowflake</span>
-      <span class="pill pill-mysql"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt=""/> MySQL</span>
-      <span class="pill pill-medallion"><i class="fa-solid fa-layer-group"></i> ETL / ELT</span>
+    <div class="stack-groups">
+      <div class="stack-group">
+        <div class="stack-row-label">Languages &amp; Core</div>
+        <div class="stack-pills">
+          <span class="pill pill-python"><i class="fa-brands fa-python"></i> Python</span>
+          <span class="pill pill-sql"><i class="fa-solid fa-database"></i> SQL</span>
+          <span class="pill pill-sql" style="background:#F0FDF4;color:#166534;border-color:#86EFAC"><i class="fa-solid fa-r"></i> R</span>
+          <span class="pill pill-stats"><i class="fa-solid fa-chart-simple"></i> Statistics</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-row-label">Analytics &amp; Modeling</div>
+        <div class="stack-pills">
+          <span class="pill pill-pymc">〜 Bayesian Modeling</span>
+          <span class="pill pill-api" style="background:#FEF9C3;color:#713F12;border-color:#FDE047"><i class="fa-solid fa-chart-line"></i> Forecasting</span>
+          <span class="pill pill-stats"><i class="fa-solid fa-magnifying-glass-chart"></i> Advanced Statistical Analysis &amp; Modelling</span>
+          <span class="pill pill-ml"><i class="fa-solid fa-brain"></i> Machine Learning</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-row-label">Visualization</div>
+        <div class="stack-pills">
+          <span class="pill pill-tableau"><i class="fa-solid fa-chart-bar"></i> Tableau</span>
+          <span class="pill pill-viz"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
+          <span class="pill pill-data">pandas</span>
+          <span class="pill pill-data">NumPy</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-row-label">Data &amp; Engineering</div>
+        <div class="stack-pills">
+          <span class="pill pill-snowflake">❄ Snowflake</span>
+          <span class="pill pill-dbt">dbt</span>
+          <span class="pill pill-medallion"><i class="fa-solid fa-code-branch"></i> ETL / ELT</span>
+          <span class="pill pill-mysql"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt=""/> MySQL</span>
+          <span class="pill pill-medallion"><i class="fa-solid fa-layer-group"></i> Medallion Architecture</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -203,8 +239,8 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 <div class="divider"><hr></div>
 
 <section id="projects">
-  <div class="section-label">Work</div>
-  <h2 class="section-title">WORK &amp; RESEARCH</h2>
+  <div class="section-label">Projects</div>
+  <h2 class="section-title">WHAT I BUILT</h2>
   <div class="projects-grid">
 
     <div class="project-card featured" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/ph-food-price-pipeline')">
@@ -217,14 +253,15 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
         </div>
       </div>
       <div class="project-body">
-        <div class="project-badge">Analytics · Forecasting · ELT</div>
+        <div class="project-badge">Analytics · Forecasting · Predictive Modeling</div>
         <h3>PHILIPPINE FOOD PRICE ANALYTICS PIPELINE</h3>
         <p>Built to answer a question nobody had formally asked: are actual market food prices rising faster than the official CPI, and does a weakening peso predict food price increases before households feel it? Connected three government data sources — WFP market prices, PSA Consumer Price Index, and live BSP exchange rates — that had never been combined before. The analysis found peso depreciation leads food price increases by 1–2 months (r=0.29, p=0.018) and that NCR food prices run 60+ index points above the official CPI — a gap invisible in national statistics. Powered by a cloud pipeline on Snowflake, dbt, and Airflow with a live Tableau dashboard.</p>
         <div class="project-tools">
-          <span class="tool-tag">Python</span><span class="tool-tag">Snowflake</span><span class="tool-tag">dbt</span>
-          <span class="tool-tag">Apache Airflow</span><span class="tool-tag">Astronomer Cloud</span>
-          <span class="tool-tag">BSP Live API</span><span class="tool-tag">Prophet</span>
-          <span class="tool-tag">Tableau</span><span class="tool-tag">300K+ rows</span>
+          <span class="tool-tag">Time Series Forecasting</span><span class="tool-tag">Predictive Modeling</span>
+          <span class="tool-tag">Lag Analysis</span><span class="tool-tag">Statistical Analysis</span>
+          <span class="tool-tag">Prophet</span><span class="tool-tag">Tableau</span><span class="tool-tag">Python</span>
+          <span class="tool-tag">Snowflake</span><span class="tool-tag">dbt</span><span class="tool-tag">Apache Airflow</span>
+          <span class="tool-tag">BSP Live API</span>
         </div>
         <div class="project-links">
           <a class="proj-link" href="https://github.com/rolanddelarosaph/ph-food-price-pipeline" target="_blank" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i> GitHub</a>
@@ -247,7 +284,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
       </div>
       <div class="project-body">
         <div class="project-badge">Business Analytics · SQL · Data Warehouse</div>
-        <h3>EUROPEAN FASHION RETAIL DATA WAREHOUSE</h3>
+        <h3>EUROPEAN FASHION RETAIL DATA WAREHOUSE &amp; ANALYTICS</h3>
         <p>Built a complete analytics layer on seven European fashion retail datasets covering revenue trends, channel performance, campaign attribution, product ranking by country, and stockout risk for high-velocity SKUs. The analysis found that 92.7% of revenue comes from full-price orders and that 55% of product-country inventory positions are at critical stock levels — the kind of signal that directly informs purchasing and markdown decisions. Powered by a MySQL star schema with stored procedures, transaction control, and 27 SQL data quality tests.</p>
         <div class="project-tools">
           <span class="tool-tag">MySQL 8.0</span><span class="tool-tag">Python</span>
@@ -275,13 +312,13 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
       </div>
       <div class="project-body">
         <div class="thesis-badge">🎓 UNDERGRADUATE THESIS</div>
-        <h3>PSA LABOR FORCE SURVEY EDUCATIONAL MOBILITY PIPELINE &amp; BAYESIAN ANALYSIS</h3>
+        <h3>BAYESIAN MULTILEVEL MODELING OF INTERGENERATIONAL EDUCATIONAL MOBILITY — PSA LFS PIPELINE</h3>
         <p>Undergraduate thesis research question: does a parent's education predict their child's outcomes, and does that relationship hold the same way across every Philippine region? Processed 11.28 million rows of PSA Labor Force Survey microdata across 14 years, then fitted a Bayesian multilevel model allowing the effect to vary by region. Found a nationally uniform father-son educational persistence slope of 0.265 — consistent across all 17 regions. The finding reframes the inequality problem as structural and national, not regional or isolated. The pipeline underneath processed 48 quarterly files with schema inconsistencies and a mid-dataset K-12 reform that changed what education codes mean.</p>
         <div class="project-tools">
-          <span class="tool-tag">Python</span><span class="tool-tag">PyMC · Bambi</span>
-          <span class="tool-tag">ArviZ</span><span class="tool-tag">ETL Pipeline</span>
-          <span class="tool-tag">PSA LFS microdata</span><span class="tool-tag">11.28M rows</span>
-          <span class="tool-tag">Bayesian MLM</span>
+          <span class="tool-tag">Bayesian Multilevel Modeling</span><span class="tool-tag">PyMC</span>
+          <span class="tool-tag">Bambi</span><span class="tool-tag">Python</span><span class="tool-tag">ArviZ</span>
+          <span class="tool-tag">pandas</span><span class="tool-tag">Intergenerational Mobility</span>
+          <span class="tool-tag">PSA LFS Microdata</span><span class="tool-tag">ETL Pipeline</span>
         </div>
         <div class="project-links">
           <a class="proj-link" href="https://github.com/rolanddelarosaph/psa-lfs-educational-mobility-pipeline" target="_blank" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i> GitHub</a>
@@ -352,7 +389,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
       </div>
       <div class="meta-card">
         <div class="label">Status</div>
-        <div class="value"><span class="status-dot"></span>&nbsp; Available for Data Engineering roles</div>
+        <div class="value"><span class="status-dot"></span>&nbsp; Available for Data Analyst / Data Scientist roles</div>
       </div>
     </div>
   </div>
@@ -365,7 +402,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
   <h2 class="section-title">GET IN TOUCH</h2>
   <div class="contact-grid">
     <div class="contact-info">
-      <p>Looking for data engineering roles — pipeline work, warehouse design, data infrastructure. If you have something that fits, or just want to talk data systems, send me a message.</p>
+      <p>Looking for Data Analyst or Data Scientist roles where I can work on statistical analysis, forecasting, machine learning, business analytics, and data-driven decision making. I also bring hands-on experience building ETL/ELT pipelines and analytical data models, so I am comfortable working from raw data through analysis and insight delivery. If that sounds useful to your team, send me a message.</p>
       <ul class="contact-list">
         <li><a href="mailto:roland.delarosa.ph@gmail.com"><i class="fa-solid fa-envelope"></i> roland.delarosa.ph@gmail.com</a></li>
         <li><a href="https://github.com/rolanddelarosaph" target="_blank"><i class="fa-brands fa-github"></i> github.com/rolanddelarosaph</a></li>
@@ -405,7 +442,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
       <a href="https://public.tableau.com/app/profile/roland.dela.rosa" target="_blank"><i class="fa-solid fa-chart-bar"></i> Tableau</a>
       <a href="mailto:roland.delarosa.ph@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
     </div>
-    <div class="footer-copy">ROLAND DELA ROSA · Data Engineer · Philippines</div>
+    <div class="footer-copy">ROLAND DELA ROSA · Data Analyst · Data Scientist · Philippines</div>
   </div>
 </footer>
 
