@@ -6,7 +6,7 @@
 
 ## Overview
 
-Personal analytics portfolio for Roland Dela Rosa, a BS Statistics graduate from Rizal Technological University, DOST Undergraduate Scholar, and Magna Cum Laude. The portfolio focuses on statistical analysis, Bayesian modeling, forecasting, machine learning, business analytics, and data visualization, supported by hands-on experience building reliable ETL/ELT pipelines and analytical data models.
+Personal analytics portfolio for Roland Dela Rosa, a BS Statistics graduate from Rizal Technological University, DOST Undergraduate Scholar, and Magna Cum Laude. The portfolio focuses on statistical analysis, Bayesian modeling, time-series forecasting, predictive modeling, business analytics, and data visualization, supported by hands-on experience building reliable ETL/ELT pipelines and analytical data models.
 
 Built with vanilla HTML, CSS, and JavaScript — no frameworks or build tools.
 
@@ -76,15 +76,15 @@ The modeling is supported by an ETL pipeline processing 11.28 million rows acros
 | Area | Skills |
 |---|---|
 | Languages & Core | Python · SQL · R · Statistics |
-| Analytics & Modeling | Bayesian Modeling · Forecasting · Advanced Statistical Analysis & Modelling · Machine Learning |
-| Visualization | Tableau · Power BI · pandas · NumPy |
+| Analytics & Modeling | Bayesian Modeling · Forecasting · Statistical Analysis & Modeling · Predictive Modeling |
+| Data Analysis & Visualization | pandas · NumPy · Tableau · Power BI |
 | Data & Engineering | Snowflake · dbt · ETL/ELT · MySQL · Medallion Architecture |
 
 ---
 
 ## Contact
 
-Currently open to **Data Analyst** and **Data Scientist** opportunities, especially roles involving statistical analysis, forecasting, machine learning, business analytics, and data-driven decision making. I also bring hands-on pipeline and data-modeling experience when the work requires going from raw data to analysis-ready datasets.
+Currently open to **Data Analyst** and **Data Scientist** opportunities, especially roles involving statistical analysis, forecasting, predictive modeling, business analytics, and data-driven decision making. I also bring hands-on pipeline and data-modeling experience when the work requires going from raw data to analysis-ready datasets.
 
 **Email:** roland.delarosa.ph@gmail.com
 
