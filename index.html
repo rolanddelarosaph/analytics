@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Roland Dela Rosa — Data Analyst | Data Scientist</title>
-<meta content="Data Analyst and Data Scientist — Statistics, Bayesian Modeling, Forecasting, Python, SQL, Tableau. Real findings on real Philippine and European data." name="description"/>
+<title>Roland Dela Rosa — Data Scientist | Data Analyst</title>
+<meta content="Data Scientist and Data Analyst — Statistics, Bayesian Modeling, Forecasting, Python, SQL, Tableau. Real findings on real Philippine and European data." name="description"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@300;400;500;600&amp;family=Fraunces:ital,wght@0,300;0,500;1,300&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
 <style>
@@ -84,16 +84,19 @@ section{max-width:1100px;margin:0 auto;padding:4rem 2rem}
 .tl-desc{font-size:0.88rem;color:var(--ink2);line-height:1.65;font-weight:300}
 .tl-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.65rem}
 .tl-tag{font-family:var(--font-mono);font-size:0.68rem;background:var(--tag-bg);color:var(--tag-text);padding:0.18rem 0.6rem;border-radius:3px;letter-spacing:0.03em}
-.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.projects-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
 .project-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;cursor:pointer;position:relative}
 .project-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.09)}
-.project-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}
-.marquee-wrap{overflow:hidden;width:100%;height:100%;background:var(--bg);position:relative;display:flex;align-items:center}
+.project-card.featured,.project-card.wide{grid-column:1/-1;display:grid;grid-template-columns:1.08fr 1fr}
+.marquee-wrap{overflow:hidden;width:100%;height:100%;min-height:460px;background:var(--bg);position:relative;display:flex;align-items:center}
 .marquee-track{display:flex;width:max-content;animation:marquee-scroll 18s linear infinite;align-items:center}
 .marquee-track:hover{animation-play-state:paused}
-.marquee-track img{height:100%;max-height:360px;width:auto;display:block;flex-shrink:0}
+.marquee-track img{height:420px;max-height:none;width:auto;display:block;flex-shrink:0;object-fit:contain;padding:0.9rem 0.25rem;background:var(--bg)}
 @keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .project-img-wrap{width:100%;overflow:hidden;height:220px;background:var(--bg)}
+.project-card.wide > .project-img-wrap{height:100%;min-height:460px;display:flex;align-items:center;justify-content:center}
+.project-card.wide > .project-img-wrap img{object-fit:contain;object-position:center center;padding:1rem;background:var(--bg)}
+.project-card.wide > .project-img-wrap img.european-arch{width:100%;height:420px;max-width:none;object-fit:contain;object-position:center center;padding:0.9rem 0.25rem;background:var(--bg);display:block}
 .project-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .project-body{padding:1.6rem;display:flex;flex-direction:column;flex:1}
 .project-badge{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--accent2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem;background:var(--tag-bg);padding:0.25rem 0.7rem;border-radius:4px;width:fit-content}
@@ -151,10 +154,12 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 @media(max-width:900px){
   .about-grid,.contact-grid{grid-template-columns:1fr}
   .projects-grid{grid-template-columns:1fr}
-  .project-card.featured{grid-template-columns:1fr;grid-column:1}
+  .project-card.featured,.project-card.wide{grid-template-columns:1fr;grid-column:1}
   .expand-panel.full-width{grid-column:1}
-  .marquee-wrap{min-height:220px}
-  .marquee-track img{height:220px}
+  .marquee-wrap{min-height:280px}
+  .marquee-track img{height:252px;padding:0.65rem 0.2rem}
+  .project-card.wide > .project-img-wrap{min-height:320px}
+  .project-card.wide > .project-img-wrap img.european-arch{height:252px;padding:0.65rem 0.2rem}
   nav .nav-links li:nth-child(n+3){display:none}
 }
 @media(max-width:580px){
@@ -183,7 +188,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 <div class="hero" id="top">
 <div class="hero-tag"><span class="status-dot"></span> Open to opportunities · Philippines</div>
 <div class="hero-name-row">
-<span class="hero-label">Data Analyst | Data Scientist</span>
+<span class="hero-label">Data Scientist | Data Analyst</span>
 <span class="hero-name">ROLAND DELA ROSA</span>
 <span class="hero-role">I study what the data actually says.</span>
 </div>
@@ -247,8 +252,13 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 
 
 <div class="project-card featured" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/psa-lfs-educational-mobility-pipeline')">
-<div class="project-img-wrap">
+<div class="marquee-wrap">
+<div class="marquee-track" id="marquee-lfs">
 <img alt="PSA LFS Educational Mobility Pipeline Architecture" src="images/architecture lfs.png"/>
+<img alt="" src="images/bayes.png"/>
+<img alt="PSA LFS Educational Mobility Pipeline Architecture" src="images/architecture lfs.png"/>
+<img alt="" src="images/bayes.png"/>
+</div>
 </div>
 <div class="project-body">
 <div class="thesis-badge">🎓 UNDERGRADUATE THESIS · BAYESIAN MODELING</div>
@@ -260,15 +270,21 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 <button class="expand-btn" onclick="event.stopPropagation();toggleExpand('expand-lfs',this)"><i class="fa-solid fa-chevron-down"></i> Details</button>
 </div>
 </div>
-<div class="expand-panel" id="expand-lfs">
+<div class="expand-panel full-width" id="expand-lfs">
 <dl class="detail-list">
-
-
-
-<div class="detail-block"><dt>Bayesian model</dt><dd>Multilevel Linear Model via Bambi/PyMC: 4 chains × 2,000 draws, all R-hat &lt; 1.01. Predictors: father's and mother's schooling years (with quadratic terms), children per household, child age, and survey year fixed effects. Region-level random intercepts and random slopes allow the father-education effect to vary by region. Prior sensitivity confirmed across 3 specifications.</dd></div><div class="detail-block"><dt>Key findings</dt><dd>For every additional year of a father's education, a son completes 0.265 more years of schooling on average — a substantial national-level persistence. Regional slopes range 0.244–0.280 but all credible intervals overlap, meaning this is a structural national problem, not isolated to any one region. Mother's education has a stronger and more regionally variable effect (0.249 in NCR to 0.385 in Davao). BARMM has the lowest average son schooling nationally at 8.86 years.</dd></div><div class="detail-block"><dt>ETL pipeline</dt><dd>PSA used three different column schemas across survey years, and the K-12 reform created two incompatible grade code systems mid-2016 — the same numeric code means a different education level depending on the quarter. A schema config registry routes each file to the correct column names and grade map automatically. A 12-step cleaning pipeline then pairs parents and children within households, applies age gap filters to remove implausible pairs, and logs every run. python main.py processes all 48 files end-to-end.</dd></div></dl>
+<div class="detail-block"><dt>Bayesian model</dt><dd>Multilevel Linear Model via Bambi/PyMC: 4 chains × 2,000 draws, all R-hat &lt; 1.01. Predictors: father's and mother's schooling years (with quadratic terms), children per household, child age, and survey year fixed effects. Region-level random intercepts and random slopes allow the father-education effect to vary by region. Prior sensitivity confirmed across 3 specifications.</dd></div><div class="detail-block"><dt>Key findings</dt><dd>For every additional year of a father's education, a son completes 0.265 more years of schooling on average — a substantial national-level persistence. Regional slopes range 0.244–0.280 but all credible intervals overlap, meaning this is a structural national problem, not isolated to any one region. Mother's education has a stronger and more regionally variable effect (0.249 in NCR to 0.385 in Davao). BARMM has the lowest average son schooling nationally at 8.86 years.</dd></div><div class="detail-block"><dt>ETL pipeline</dt><dd>PSA used three different column schemas across survey years, and the K-12 reform created two incompatible grade code systems mid-2016 — the same numeric code means a different education level depending on the quarter. A schema config registry routes each file to the correct column names and grade map automatically. A 12-step cleaning pipeline then pairs parents and children within households, applies age gap filters to remove implausible pairs, and logs every run. <span style="font-family:var(--font-mono)">python main.py</span> processes all 48 files end-to-end.</dd></div></dl>
 </div>
-</div><div class="project-card" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/ph-food-price-pipeline')">
-<div class="project-img-wrap"><img alt="Philippine Food Price Analytics Tableau Dashboard" src="images/ph_food_price_dashboard.png"/></div>
+</div>
+
+<div class="project-card wide" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/ph-food-price-pipeline')">
+<div class="marquee-wrap">
+<div class="marquee-track" id="marquee-food">
+<img alt="Philippine Food Price Pipeline Architecture" src="images/architecture food pipeline.png"/>
+<img alt="Philippine Food Price Analytics Tableau Dashboard" src="images/ph_food_price_dashboard.png"/>
+<img alt="Philippine Food Price Pipeline Architecture" src="images/architecture food pipeline.png"/>
+<img alt="Philippine Food Price Analytics Tableau Dashboard" src="images/ph_food_price_dashboard.png"/>
+</div>
+</div>
 <div class="project-body">
 <div class="project-badge">Forecasting · Analytics · Data Pipeline</div>
 <h3>PHILIPPINE FOOD PRICE ANALYTICS PIPELINE</h3>
@@ -293,9 +309,16 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 <div class="detail-block"><dt>Key findings</dt><dd>BSP lag correlation analysis: peso depreciation leads food price increases by 1–2 months (r=0.29, p=0.018). Prophet forecasting with and without BSP as regressor diverges during depreciation periods — confirming exchange rate adds genuine forecast signal. Key findings: NCR food prices run 60+ index points above PSA CPI. Meat, fish, and eggs surged 80.6% from 2018–2023. Luzon is 19.7% more expensive than Mindanao for the same WFP basket.</dd></div>
 </dl>
 </div>
-</div><div class="project-card" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/datawarehouse-european-ecommerce')">
-<div class="project-img-wrap">
-<img alt="European Fashion Retail Data Warehouse Architecture" src="images/architecture datawarehouse.png"/>
+</div>
+
+<div class="project-card wide" onclick="handleCardClick(event,'https://github.com/rolanddelarosaph/datawarehouse-european-ecommerce')">
+<div class="marquee-wrap">
+<div class="marquee-track" id="marquee-fashion">
+<img alt="European Fashion Retail Data Warehouse Architecture" class="european-arch" src="images/architecture datawarehouse.png"/>
+<img alt="European Fashion Retail Data Warehouse Architecture" class="european-arch" src="images/architecture datawarehouse.png"/>
+<img alt="European Fashion Retail Data Warehouse Architecture" class="european-arch" src="images/architecture datawarehouse.png"/>
+<img alt="European Fashion Retail Data Warehouse Architecture" class="european-arch" src="images/architecture datawarehouse.png"/>
+</div>
 </div>
 <div class="project-body">
 <div class="project-badge">Business Analytics · SQL · Retail Analytics</div>
@@ -307,10 +330,10 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 <button class="expand-btn" onclick="event.stopPropagation();toggleExpand('expand-fashion',this)"><i class="fa-solid fa-chevron-down"></i> Details</button>
 </div>
 </div>
-<div class="expand-panel" id="expand-fashion">
+<div class="expand-panel full-width" id="expand-fashion">
 <dl class="detail-list">
-<div class="detail-block"><dt>Pipeline design</dt><dd>Bronze: 7 tables loaded via LOAD DATA LOCAL INFILE (fastest MySQL bulk-load method), truncated and reloaded on each run for idempotency. Silver: a stored procedure (transform_silver_layer()) applies type casting for all IDs, dates, and decimals; strips percentage characters; trims whitespace; and removes duplicates via ROW_NUMBER() — all in one transactional call. Gold: star schema with dim_customer, dim_product, dim_campaign + fact_sales (2,253 rows), surrogate keys, foreign keys, and indexed on sale_date and customer_id. Campaign attribution joins on channel + date range so each line item is automatically attributed to the active campaign — no manual tagging. Full pipeline wraps every stage in a single MySQL transaction — any failure triggers a complete rollback.</dd></div>
-<div class="detail-block"><dt>Data quality &amp; execution</dt><dd>SQL-based quality tests: row count checks per layer, null checks on all primary keys, referential integrity validation, duplicate checks on dimension keys, and discount logic validation. Pipeline logs every stage to pipeline.log with timestamps — exits code 1 on failure, code 0 on success.</dd></div>
+<div class="detail-block"><dt>Pipeline design</dt><dd>Bronze: 7 tables loaded via LOAD DATA LOCAL INFILE (fastest MySQL bulk-load method), truncated and reloaded on each run for idempotency. Silver: a stored procedure (<span style="font-family:var(--font-mono)">transform_silver_layer()</span>) applies type casting for all IDs, dates, and decimals; strips percentage characters; trims whitespace; and removes duplicates via ROW_NUMBER() — all in one transactional call. Gold: star schema with dim_customer, dim_product, dim_campaign + fact_sales (2,253 rows), surrogate keys, foreign keys, and indexed on sale_date and customer_id. Campaign attribution joins on channel + date range so each line item is automatically attributed to the active campaign — no manual tagging. Full pipeline wraps every stage in a single MySQL transaction — any failure triggers a complete rollback.</dd></div>
+<div class="detail-block"><dt>Data quality &amp; execution</dt><dd>SQL-based quality tests: row count checks per layer, null checks on all primary keys, referential integrity validation, duplicate checks on dimension keys, and discount logic validation. Pipeline logs every stage to <span style="font-family:var(--font-mono)">pipeline.log</span> with timestamps — exits code 1 on failure, code 0 on success.</dd></div>
 <div class="detail-block"><dt>Business findings</dt><dd>€324,236 revenue · 905 orders · €358 AOV. Only 9.8% of orders were discounted (avg 24.3% off) — 92.7% of revenue is full-price, meaning healthy margin discipline. 55% of product-country inventory positions at critical stock levels, with the stockout risk query identifying which high-velocity SKUs are also most exposed — the highest-replenishment-priority items.</dd></div>
 </dl>
 </div>
@@ -365,7 +388,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 </div>
 <div class="meta-card">
 <div class="label">Status</div>
-<div class="value"><span class="status-dot"></span>  Available for Data Analyst / Data Scientist roles</div>
+<div class="value"><span class="status-dot"></span>  Available for Data Scientist / Data Analyst roles</div>
 </div>
 </div>
 </div>
@@ -376,7 +399,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 <h2 class="section-title">GET IN TOUCH</h2>
 <div class="contact-grid">
 <div class="contact-info">
-<p>Looking for Data Analyst or Data Scientist roles where I can work on statistical analysis, forecasting, predictive modeling, business analytics, and data-driven decision making. I also bring hands-on experience building ETL/ELT pipelines and analytical data models, so I am comfortable working from raw data through analysis and insight delivery. If that sounds useful to your team, send me a message.</p>
+<p>Looking for Data Scientist or Data Analyst roles where I can work on statistical analysis, forecasting, predictive modeling, business analytics, and data-driven decision making. I also bring hands-on experience building ETL/ELT pipelines and analytical data models, so I am comfortable working from raw data through analysis and insight delivery. If that sounds useful to your team, send me a message.</p>
 <ul class="contact-list">
 <li><a href="mailto:roland.delarosa.ph@gmail.com"><i class="fa-solid fa-envelope"></i> roland.delarosa.ph@gmail.com</a></li>
 <li><a href="https://github.com/rolanddelarosaph" target="_blank"><i class="fa-brands fa-github"></i> github.com/rolanddelarosaph</a></li>
@@ -415,7 +438,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
 <a href="https://public.tableau.com/app/profile/roland.dela.rosa" target="_blank"><i class="fa-solid fa-chart-bar"></i> Tableau</a>
 <a href="mailto:roland.delarosa.ph@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
 </div>
-<div class="footer-copy">ROLAND DELA ROSA · Data Analyst · Data Scientist · Philippines</div>
+<div class="footer-copy">ROLAND DELA ROSA · Data Scientist · Data Analyst · Philippines</div>
 </div>
 </footer>
 <script>
@@ -473,12 +496,18 @@ document.getElementById('fs-form').addEventListener('submit', async function(e) 
 
 // ── MARQUEE SPEED (auto-adjusts to actual image widths) ────────────────
 window.addEventListener('load', () => {
-  const track = document.getElementById('marquee-food');
-  if (!track) return;
-  const imgs = track.querySelectorAll('img');
-  let loaded = 0;
-  const check = () => { if (++loaded === imgs.length) track.style.animationDuration = (track.scrollWidth / 2 / 80) + 's'; };
-  imgs.forEach(img => img.complete ? check() : img.addEventListener('load', check));
+  const tracks = document.querySelectorAll('.marquee-track');
+  tracks.forEach(track => {
+    const imgs = track.querySelectorAll('img');
+    let loaded = 0;
+    const check = () => {
+      loaded += 1;
+      if (loaded === imgs.length) {
+        track.style.animationDuration = (track.scrollWidth / 2 / 80) + 's';
+      }
+    };
+    imgs.forEach(img => img.complete ? check() : img.addEventListener('load', check));
+  });
 });
 </script>
 </body>
