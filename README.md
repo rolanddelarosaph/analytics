@@ -1,6 +1,6 @@
 # Roland Dela Rosa — Data Analyst & Data Scientist Portfolio
 
-**Portfolio repository:** https://github.com/rolanddelarosaph/analytics.git
+**Portfolio repository:** https://rolanddelarosaph.github.io/analytics/
 
 ---
 
